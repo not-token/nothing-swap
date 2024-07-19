@@ -25,6 +25,24 @@
 
 
 ;; read only functions 
+(define-read-only (get-balance (user principal))
+  (ok (ft-get-balance not-lp-tokens user)))
+
+(define-read-only (get-decimals)
+  (ok u6))
+
+(define-read-only (get-name)
+  (ok "not-lp"))
+
+(define-read-only (get-symbol)
+  (ok "NOTLP"))
+
+(define-read-only (get-total-supply)
+  (ok (ft-get-supply not-lp-tokens)))
+
+(define-read-only (get-token-uri)
+  (ok none))
+
 (define-read-only (get-liq-reserves)
   (ok {
     liq-stx-reserve: (var-get liquidity-stx-reserve),
